@@ -1,0 +1,7 @@
+# .dockerignore
+user/.venv
+user/.vscode
+user/.angular
+user/node_modules
+.gitignore
+
