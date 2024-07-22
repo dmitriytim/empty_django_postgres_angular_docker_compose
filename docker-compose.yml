@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:13
@@ -16,7 +14,6 @@ services:
     build: ./admin
     ports:
       - "8000:8000"
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./admin:/code
       - ./.env:/code/.env:ro s
@@ -32,10 +29,6 @@ services:
   angular:
     image: node:20
     build: ./user
-    #command: sh -c "ng run project:serve-ssr"
-    command: sh -c "cd /app && npm install --force && ng serve --host 0.0.0.0 --port 4200 --disable-host-check" # Запуск Angular приложения
-    #command: sh -c "cd /app && npm install --force && ng build  && npx http-server -p 4200 -c-1 dist/project/browser"
-    #command: sh -c "cd /app npm install --force && npm run build:ssr && npm run serve:ssr"
     volumes:
       - ./user:/app
       - ./.env:/app/.env:ro
