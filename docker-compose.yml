@@ -34,7 +34,6 @@ services:
       - ./.env:/app/.env:ro
     ports:
       - "4200:4200" # Порт, на котором будет доступно Angular приложение
-#      - "9876:9876"
     environment:
       - API_URL=http://${DJANGO_API_HOST}:8000/api
     depends_on:
