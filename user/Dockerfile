@@ -15,7 +15,8 @@ RUN npm install -g @angular/cli --force
 
 # Копируем все файлы из папки проекта в контейнер
 COPY . .
-RUN npm install --force
 #CMD ["bash"]
-CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200", "--disable-host-check"]
+CMD ["sh", "-c", "npm install --force && ng serve --host 0.0.0.0 --port 4200 --disable-host-check"]
+
+#CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200", "--disable-host-check"]
 
